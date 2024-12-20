@@ -1,1 +1,1 @@
-# G-r-ile-y-z-tan-ma-ve-duygu-durum-analizi
+# Görü ile yüz tanıma ve duygu-durum analizi
