@@ -1,4 +1,4 @@
-# Python-OpenCV Duygu Durum Analizi
+# Python-OpenCV Yüz Tanıma ve Duygu Durum Analizi
 
 
 ## Proje Tanımı
