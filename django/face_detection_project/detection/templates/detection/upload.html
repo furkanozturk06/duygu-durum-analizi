@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Görüntü Yükle</title>
+    <style>
+        /* Genel Stil */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            font-size: 2.4rem;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        form p {
+            margin: 0;
+        }
+
+        input[type="file"] {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            background: #f9f9f9;
+            color: #555;
+            font-size: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.3s, background-color 0.3s;
+        }
+
+        input[type="file"]:hover {
+            border-color: #4facfe;
+            background-color: #eefaff;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #4facfe, #00f2fe);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background: linear-gradient(90deg, #00f2fe, #4facfe);
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        footer a {
+            color: #4facfe;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            input[type="file"],
+            button {
+                font-size: 1rem;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Fotoğraf Yükle</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Yükle</button>
+        </form>
+        <footer>
+            Created by <a href="https://github.com/tahayasincicek" target="_blank">tahayasincicek</a> & 
+            <a href="https://github.com/furkanozturk06" target="_blank">furkanozturk</a>
+        </footer>
+    </div>
+</body>
+</html>
